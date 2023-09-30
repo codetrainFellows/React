@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+#para {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.name {
+  color: pink;
+}
 
 .App-logo {
   height: 40vmin;
