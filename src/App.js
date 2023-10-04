@@ -1,14 +1,13 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
-import Banner from "./Components/Banner";
-import Footer from "./Components/Footer";
+
+import Functions from "./Components/Functions";
+import Class from "./Components/Class";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Banner />
-      <Footer />
+      <Functions />
+      <Class />
     </div>
   );
 }
