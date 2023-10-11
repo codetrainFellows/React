@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { v4 as uuidV4 } from "uuid";
-
-const Functional = (props) => {
+function EditFort() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState();
@@ -17,12 +15,8 @@ const Functional = (props) => {
       email,
       phone,
       gen,
-      id: uuidV4(),
     };
-
-    props.createStudent(student);
   };
-
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -78,6 +72,6 @@ const Functional = (props) => {
       </Form>
     </div>
   );
-};
+}
 
-export default Functional;
+export default EditFort;
