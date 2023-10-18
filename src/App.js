@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import { Row, Col } from "react-bootstrap";
 import Func from "./components/Func";
-
+import List from "./components/List";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +26,7 @@ class App extends Component {
             <Func createStudent={this.createStudent} />
           </Col>
           <Col xs={12} md={6} lg={6}>
-            Hello
+            <List students={this.state.students} />
           </Col>
         </Row>
       </Container>
