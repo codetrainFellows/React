@@ -19,8 +19,8 @@ function Func(props) {
       gen,
       id: uuidv4(),
     };
-    props.createStudent(student);
-    //console.log(student);
+    //props.createStudent(student);
+    console.log(student);
   };
 
   return (
