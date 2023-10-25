@@ -2,13 +2,17 @@ import React from "react";
 import Student_card from "./Student_card";
 import { Row, Col } from "react-bootstrap";
 
-function List({ students }) {
+function List({ students, deleteStudent, upadateStudent }) {
   return (
     <Row>
       {students.map((student, index) => {
         return (
-          <Col key={student.id}>
-            <Student_card student={student} />
+          <Col>
+            <Student_card
+              student={student}
+              deleteStudent={deleteStudent}
+              upadateStudent={upadateStudent}
+            />
           </Col>
         );
       })}

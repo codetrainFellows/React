@@ -3,23 +3,23 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as uuidv4 } from "uuid";
 
-function Func(props) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState();
-  const [gen, setGen] = useState();
+function UpdateForm({ student, upadateStudent }) {
+  const [name, setName] = useState(student.name);
+  const [email, setEmail] = useState(student.email);
+  const [phone, setPhone] = useState(student.phone);
+  const [gen, setGen] = useState(student.gen);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const student = {
+    const updatedStudent = {
       name,
       email: email,
       phone,
       gen,
-      id: uuidv4(),
+      id: student.id,
     };
-    props.createStudent(student);
+    upadateStudent(student.id, updatedStudent);
     //console.log(student);
   };
 
@@ -78,4 +78,4 @@ function Func(props) {
   );
 }
 
-export default Func;
+export default UpdateForm;
