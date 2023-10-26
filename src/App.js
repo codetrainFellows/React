@@ -17,6 +17,27 @@ function App() {
     setStudents([...students, student]);
   };
   //console.log(students);
+
+  //function to delete data from our arrat using a unique id
+  const deleteStudent = (personId) => {
+    const filteredStudents = students.filter((item) => item.id !== personId);
+    //filteredStudents is a new array containing students without the id provided
+    setStudents(filteredStudents);
+  };
+
+  //function for update of student
+  const updateStudent = (id, updateStudent) => {
+    const updatedStudents = students.map((item) => {
+      //cheack if student has same id
+      if (item.id === id) {
+        return updateStudent;
+      }
+
+      return item;
+    });
+    setStudents(updatedStudents);
+  };
+
   return (
     <div>
       <Container>
@@ -27,7 +48,11 @@ function App() {
           </Col>
           <Col>
             <h1>Cards</h1>
-            <StudentList students={students} />
+            <StudentList
+              students={students}
+              deleteStudent={deleteStudent}
+              updateStudent={updateStudent}
+            />
           </Col>
         </Row>
       </Container>

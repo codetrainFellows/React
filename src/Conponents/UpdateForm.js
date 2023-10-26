@@ -3,10 +3,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as uuidv4 } from "uuid";
 
-function StudentForm(props) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function UpdateForm(props) {
+  const [name, setName] = useState(props.student.name);
+  const [email, setEmail] = useState(props.student.email);
+  const [password, setPassword] = useState(props.student.password);
 
   //handle submit when form button is pressed to submit
   const handleSubmit = (e) => {
@@ -17,12 +17,11 @@ function StudentForm(props) {
       name,
       email,
       password,
-      id: uuidv4(),
+      id: props.student.id,
     };
 
-    //pass student obj to prop from app.js as parameter
-    props.addStudent(student);
-    console.log(student);
+    props.updateStudent(props.student.id, student);
+    props.close();
   };
 
   return (
@@ -63,10 +62,10 @@ function StudentForm(props) {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Submit
+        Update
       </Button>
     </Form>
   );
 }
 
-export default StudentForm;
+export default UpdateForm;

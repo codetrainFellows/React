@@ -14,8 +14,12 @@ function StudentList(props) {
       {props.students.map((item) => {
         //item represent the value of out arr at each iteration
         return (
-          <Col>
-            <StudentCard student={item} />
+          <Col key={item.id}>
+            <StudentCard
+              student={item}
+              deleteStudent={props.deleteStudent}
+              updateStudent={props.updateStudent}
+            />
           </Col>
         );
       })}
